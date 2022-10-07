@@ -20,6 +20,10 @@
         <input type="submit" value="Enviar" class="button1">
     </div>
     
+    <br></br>
+    <div class="wrap">
+    <button><a href="index.html">Volver</a></button>
+    <div>
 </form>
 </body>
 </html>

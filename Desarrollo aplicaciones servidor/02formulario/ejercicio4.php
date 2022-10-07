@@ -19,7 +19,9 @@
         <!-- <button class="button1">Submit</button> -->
         <input type="submit" value="Enviar" class="button1">
     </div>
-    
+    <div class="wrap">
+    <button><a href="index.html">Volver</a></button>
+</div>
 </form>
 </body>
 </html>
