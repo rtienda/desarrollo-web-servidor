@@ -7,6 +7,6 @@
     $edad = $_POST["edad"];
     echo "<p>$nombre</p>";
     echo "<p>$edad</p>";
-
+    
 
 ?>

@@ -17,6 +17,13 @@
             break;
         
         }
+        //ESTRUCTURA MATCH
+        $dia = match($d) {
+            "Monday" => "Lunes",
+            "Tuesday" => "Martes",
+            "Wednesday" => "Miércoles",
+            "Thursday" => "Jueves",
+        };
 
         /*
             Ejercicio notas con switch

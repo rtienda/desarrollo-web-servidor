@@ -18,8 +18,29 @@
             <th style="min-width: 80px;">Enlace</th>
         </tr>
         <tr>
-          <td>Formulario get/post</td>
-          <td><a href="ejercicios/ejercicio1.php"><button>Ejercicio1</button></a></td>
+          <td><p id="ej1">Formulario get/post</p>
+            <form action="#ej1" method="post">
+                <label>Nombre</label>
+                <input type="text" name="nombre"><br></br>
+                <label>Edad</label>
+                <input type="text" name="edad"><br></br>
+                <input type="hidden" name="f" value="ej1">
+                <input type="submit" value="Enviar" class="button1">
+            </form>
+            <?php
+                if($_SERVER["REQUEST_METHOD"]=="POST"){
+                    if($_POST["f"]=="ej1"){
+                        $nombre = $_POST["nombre"];
+                        $edad = $_POST["edad"];
+                        echo "<p>$nombre</p>";
+                        echo "<p>$edad</p>";
+                    }
+                }
+            ?>
+          </td>
+          <td><a href="ejercicios/ejercicio1.php"><button>Ejercicio1</button></a>
+        
+        </td>
         </tr>
         <tr>
             <td>Ejercicio de introducir un numero y pasarlo como parametro</td>

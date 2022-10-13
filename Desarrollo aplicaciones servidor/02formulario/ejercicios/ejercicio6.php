@@ -16,9 +16,12 @@
     </div>
     
     <br></br>
-    <div class="wrap">
+    <!-- <div class="wrap">
     <button><a href="index.html">Volver</a></button>
-    <div>
+    <div> -->
+    <?php
+    require 'footer.php';
+?>
 </form>
 </body>
 </html>

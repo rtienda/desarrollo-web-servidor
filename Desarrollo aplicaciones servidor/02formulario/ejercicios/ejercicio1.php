@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="estilo2.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h1>Ejercicio1</h1>
@@ -18,6 +18,8 @@
         <input type="submit" value="Enviar" class="button1">
     </form>
 <br></br>
-<a href="./index.html"><button >Volver</button></a>
+<?php
+    require 'footer.php';
+?>
 </body>
 </html>

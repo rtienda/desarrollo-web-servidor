@@ -1,6 +1,6 @@
 <html>  
 <head>
-    <link rel="stylesheet" href="estilo2.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h1>Ejercicio 2</h1>
@@ -12,9 +12,12 @@
     <input type="submit" value="Enviar" class="button1">
 </div>
 </form>
-<div class="wrap">
+<!-- <div class="wrap">
 <a href="./index.html"><button>Volver</button></a>
-</div>
+</div> -->
+<?php
+    require 'footer.php';
+?>
 </body>
 </html>
 
