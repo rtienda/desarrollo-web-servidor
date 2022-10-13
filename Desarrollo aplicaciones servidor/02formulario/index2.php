@@ -62,11 +62,59 @@
             <td><a href="ejercicios/ejercicio4.php"><button>Ejercicio4</button></a></td>
         </tr>
         <tr>
-            <td>Formulario que reciba dos números. Devolver el resultado de elevar el primero al segundo. </td>
+            <td><p>Formulario que reciba dos números. Devolver el resultado de elevar el primero al segundo.</p> 
+            <form action="" method="post" >
+                <label>Base</label>
+                <input type="number" name="base" class="numberButton"><br></br>
+                <label>Exponente</label>
+                <input type="number" name="exponente" class="numberButton"><br></br>
+                <input type="hidden" name="f" value="ej5">
+                <input type="submit" value="Enviar" class="button1">
+            </form>
+            <?php
+                if($_SERVER["REQUEST_METHOD"]=="POST"){
+                    if($_POST["f"]=="ej5"){
+                        require 'funciones/potencia.php';
+                        $base = $_POST["base"];
+                        $exponente = $_POST["exponente"];
+                        $resultado = potencia($base,$exponente);
+                        if($resultado == -1){
+                            echo "<p>El numero no puede ser negativo</p>";
+
+                        }else{
+                            echo "<p>El resultado es $resultado</p>";
+                        }
+                    }
+                }
+            ?>
+            </td>
             <td><a href="ejercicios/ejercicio5.php"><button>Ejercicio5</button></a></td>
         </tr>
         <tr>
-            <td>Formulario que reciba un número y devuelva su factorial.</td>
+            <td><p id="ej6">Formulario que reciba un número y devuelva su factorial.</p>
+            <form action="#ej6" method="post" >
+                <label>Factorial de:</label>
+                <input type="number" name="factorial" class="numberButton"><br></br>
+                <input type="hidden" name="f" value="ej6">
+                <input type="submit" value="Enviar" class="button1">
+
+            </form>
+            <?php
+                if($_SERVER["REQUEST_METHOD"]=="POST"){
+                    if($_POST["f"]=="ej6"){
+                        require 'funciones/factorial.php';
+                        $factorial = $_POST["factorial"];
+                        $resultado = factorial($factorial);
+                        if($resultado == -1){
+                            echo "<p>El numero no puede ser negativo o cero</p>";
+
+                        }else{
+                            echo "<p>El resultado es $resultado</p>";
+                        }
+                    }
+                }
+            ?>
+            </td>
             <td><a href="ejercicios/ejercicio6.php"><button>Ejercicio6</button></a></td>
         </tr>
       </table>
