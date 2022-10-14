@@ -7,6 +7,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 
+    <!-- AÑADIR AL FORMULARIO DE VIDEOJUEGOS:
+
+        - Consola (select con al menos 4 opciones) (PS4, PS5, SWITCH...)
+        El select de consolas tendrá una opción por defecto vacía
+
+        - Descripción (area de texto con 255 caracteres máximo)
+
+        Añadir mensajes de error -->
+
 </head>
 <body>
     <h2>Nuevo videojuego</h2>
@@ -24,6 +33,12 @@
 
             $temp_titulo = depurar($_POST["titulo"]);
             $temp_precio = depurar($_POST["precio"]);
+            if(isset($_POST["listaConsolas"])){
+                $temp_consola = depurar($_POST["listaConsolas"]);
+            }else{
+                $temp_consola="";
+            }
+            
             if(empty($temp_titulo)){
                 $err_titulo = "El titulo es obligatorio";
                 // validar que como mucho tenga 40 caracteres
@@ -38,7 +53,9 @@
             }
 
 
-
+            if(empty($temp_consola)){
+                $err_consola = "Debes elegir una consola";
+            }
 
             if(empty($temp_precio)){
                 $err_precio = "El precio es obligatorio";
@@ -62,8 +79,8 @@
             }
 
             if(isset($titulo) && isset($precio)){
-                echo "<p>$titulo</p>";
-                echo "<p>$precio</p>";
+                //echo "<p>$titulo</p>";
+                //echo "<p>$precio</p>";
             }
         }
         function depurar($dato){
@@ -82,7 +99,18 @@
         <p>Precio: <input type="text" name="precio">
         <span class="error">
             * <?php if(isset($err_precio)) echo $err_precio ?>
-        </span></p>      
+        </span></p>
+        <p>Consola: 
+            <select id="consolas" name="listaConsolas">
+                <option value="" selected disabled hidden>Elige consola</option>
+                <option value="ps4">Ps4</option>
+                <option value="switch">Switch</option>
+                <option value="xbox">Xbox One</option>
+                <option value="steam">Steam Deck</option>
+            </select>
+        <span class="error">
+            * <?php if(isset($err_consola)) echo $err_consola ?>
+        </span></p>
         <p><input type="submit" name="Crear"></p>
     </form>
 
