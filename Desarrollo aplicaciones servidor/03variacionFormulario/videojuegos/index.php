@@ -27,6 +27,9 @@
             if(empty($temp_titulo)){
                 $err_titulo = "El titulo es obligatorio";
             }
+            if(empty($temp_precio)){
+                $err_precio = "El precio es obligatorio";
+            }
         }
         function depurar($dato){
             $dato = trim($dato);
@@ -41,7 +44,10 @@
         <span class="error">
             * <?php if(isset($err_titulo)) echo $err_titulo ?>
         </span></p>
-        <p>Precio: <input type="text" name="precio"></p>
+        <p>Precio: <input type="text" name="precio">
+        <span class="error">
+            * <?php if(isset($err_precio)) echo $err_precio ?>
+        </span></p>      
         <p><input type="submit" name="Crear"></p>
     </form>
 
