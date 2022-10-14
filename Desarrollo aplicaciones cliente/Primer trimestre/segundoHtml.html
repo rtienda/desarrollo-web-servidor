@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="entrada">54p</h1>
+    <button onclick="validar()">VALIDAR</button>
+
+
+
+    <script>
+        'use strict'
+        var x = document.getElementById("entrada").innerHTML;
+        console.log(typeof (x));
+        var valor = document.getElementById("entrada").innerHTML;
+        alert(valor);
+        function validar() {
+            do {
+                let t = typeof (x);
+                if (t != "number") {
+                    x = parseInt(x);
+                } else {
+                    x = 0;
+                    document.getElementById("entrada").innerHTML = "0"
+                    //document.getElementById("entrada").innerHTML = "";
+                }
+
+            } while (x != 0);
+            let y = x * 2;
+            console.log(x + ' ' + y + ' ' + typeof (x) + ' ');
+        }
+    </script>
+</body>
+
+</html>
