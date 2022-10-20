@@ -95,7 +95,7 @@
                 echo "<p>$titulo</p>";
                 echo "<p>$precio</p>";
                 echo "<p>$listaConsolas</p>";
-                echo "<p>$descripcion</p>";
+                echo "<p>$descripcion</p>"; 
             }
         }
         function depurar($dato){
