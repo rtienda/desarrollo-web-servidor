@@ -38,6 +38,17 @@
             }else{
                 $temp_consola="";
             }
+            $temp_descripcion = $_POST["descripcion"];
+
+            if(empty($temp_descripcion)){
+                $err_descripcion="La descripcion es obligatoria";
+            }else{
+                if(strlen($temp_descripcion)>255){
+                    $err_descripcion = "La descripcion no puede tener mas de 255 caracteres";
+                }else{
+                    $descripcion=$temp_descripcion;
+                }
+            }
             
             if(empty($temp_titulo)){
                 $err_titulo = "El titulo es obligatorio";
@@ -55,6 +66,8 @@
 
             if(empty($temp_consola)){
                 $err_consola = "Debes elegir una consola";
+            }else{
+                $listaConsolas=$temp_consola;
             }
 
             if(empty($temp_precio)){
@@ -78,9 +91,11 @@
                 }
             }
 
-            if(isset($titulo) && isset($precio)){
-                //echo "<p>$titulo</p>";
-                //echo "<p>$precio</p>";
+            if(isset($titulo) && isset($precio) && isset($descripcion) && isset($listaConsolas)){
+                echo "<p>$titulo</p>";
+                echo "<p>$precio</p>";
+                echo "<p>$listaConsolas</p>";
+                echo "<p>$descripcion</p>";
             }
         }
         function depurar($dato){
@@ -111,6 +126,10 @@
         <span class="error">
             * <?php if(isset($err_consola)) echo $err_consola ?>
         </span></p>
+        <p>Descripcion: <textarea  name="descripcion"></textarea>
+            <span class="error">
+                * <?php if(isset($err_descripcion)) echo $err_descripcion ?>
+            </span></p>
         <p><input type="submit" name="Crear"></p>
     </form>
 
