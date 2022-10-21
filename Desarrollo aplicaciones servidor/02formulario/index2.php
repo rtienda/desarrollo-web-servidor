@@ -140,10 +140,10 @@
                         }else{
                             echo "<table class='customTable'>";
                             echo "<tr><th>Operacion</th><th>Resultado</th></tr>";
-                            for($i=1;$i<=10;$i++){
-                                $resultado=$numero*$i;
-                                echo "<tr><td>$numero x $i</td><td>$resultado</td></tr>";
-                            }
+                                for($i=1;$i<=10;$i++){
+                                    $resultado=$numero*$i;
+                                    echo "<tr><td>$numero x $i</td><td>$resultado</td></tr>";
+                                }
                             echo "</table>";
                         
                         }
