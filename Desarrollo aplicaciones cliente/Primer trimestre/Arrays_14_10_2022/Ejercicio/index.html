@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var nombresDesordenados = new Array("Vegetta","Willyrex","IlloJuan","Knekro","Jagger","Paracetamor",
+        "Ibai","BarbeQ","Merluso","Joseju","Ander");
+        var nombresOrdenados = new Array();
+        var nombre;
+        var result;
+        var variable;
+        var nombreNuevo;
+        for (let i = 0; i < nombresDesordenados.length; i++) {
+            nombre = nombresDesordenados[i];
+            //alert(nombre);
+            result = false;
+            //alert("NuevoNombre: "+nombre);
+            variable = 0;
+            // for (let j = 0; j <= nombresOrdenados.length&&result==false; j++) {
+
+            for (let j = 0; j <= nombresOrdenados.length; j++) {
+                nombreNuevo=nombresOrdenados[j];
+                //alert("nombre: "+nombre);
+                
+                if(nombre>nombreNuevo){
+                    variable = j+1;
+                    // alert(nombre+" es mayor que "+nombreNuevo);
+                }else{
+                    //alert(nombresOrdenados);
+                    // nombresOrdenados.splice(j,0,nombre);
+                    variable = j;
+                    // result=true;
+                    break;
+                    // alert(nombre+" es menor que "+nombreNuevo);
+                    // alert(nombresOrdenados);
+                }   
+            }
+            nombresOrdenados.splice(variable,0,nombre);
+            // alert(nombresOrdenados);
+        }
+
+        console.log("El listado desordenado es este: "+nombresDesordenados);
+        console.log("El listado ordenado es : "+nombresOrdenados);
+        // alert("resultado: "+nombresOrdenados);
+    </script>
+</body>
+</html>
