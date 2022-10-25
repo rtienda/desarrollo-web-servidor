@@ -50,6 +50,45 @@
                 }
             }
             
+
+            $file_name = $_FILES["imagen"]["name"];
+            $file_temp_name = $_FILES["imagen"]["tmp_name"];
+            $file_size = $_FILES["imagen"]["size"];
+            $file_type = $_FILES["imagen"]["type"];
+            $extension = pathinfo($file_name,PATHINFO_EXTENSION);
+            /*
+                Validar el fichero introducido
+                - Es obligatorio introducir un fichero
+                - Tiene que ser una imagen de extension JPG, JPEG, PNG
+                - La imagen no puede tener mas de 1 mega
+            */
+            if(!empty($file_name)){
+                if($extension=="png"||$extension=="jpg"||$extension=="jpeg"){
+                    if($file_size<1000000){
+                        $new_file_name = "videojuego_".$temp_titulo.".".$extension;
+                        $path = "./images/" . $new_file_name;
+                        // echo "<p>La extension es $ext</p>";
+            
+                        if(move_uploaded_file($file_temp_name,$path)){
+                            echo "<p>Fichero movido con exito</p>";
+                        }else{
+                            $err_imagen = "<p>No se ha podido mover el fichero</p>";
+                        }
+                    }else{
+                        $err_imagen = "<p>No se admiten imagenes con tamaño superior a 1 megabyte</p>";
+                    }
+                }else{
+                    $err_imagen = "<p>Solo se admiten extensiones: png, jpg, jpeg</p>";
+                }
+            }else{
+                $err_imagen = "<p>Es obligatorio adjuntar una foto</p>";
+            }
+
+
+            
+
+            
+            
             if(empty($temp_titulo)){
                 $err_titulo = "El titulo es obligatorio";
                 // validar que como mucho tenga 40 caracteres
@@ -106,15 +145,17 @@
         }
             
     ?>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <p>Titulo: <input type="text" name="titulo">
-        <span class="error">
-            * <?php if(isset($err_titulo)) echo $err_titulo ?>
-        </span></p>
+            <span class="error">
+                * <?php if(isset($err_titulo)) echo $err_titulo ?>
+            </span>
+        </p>
         <p>Precio: <input type="text" name="precio">
-        <span class="error">
-            * <?php if(isset($err_precio)) echo $err_precio ?>
-        </span></p>
+            <span class="error">
+                * <?php if(isset($err_precio)) echo $err_precio ?>
+            </span>
+        </p>
         <p>Consola: 
             <select id="consolas" name="listaConsolas">
                 <option value="" selected disabled hidden>Elige consola</option>
@@ -123,14 +164,25 @@
                 <option value="xbox">Xbox One</option>
                 <option value="steam">Steam Deck</option>
             </select>
-        <span class="error">
-            * <?php if(isset($err_consola)) echo $err_consola ?>
-        </span></p>
+            <span class="error">
+                * <?php if(isset($err_consola)) echo $err_consola ?>
+            </span>
+        </p>
         <p>Descripcion: <textarea  name="descripcion"></textarea>
             <span class="error">
                 * <?php if(isset($err_descripcion)) echo $err_descripcion ?>
-            </span></p>
+            </span>
+        </p>
+
+        <p>Imagen: <input type="file" name="imagen">
+            <span class="error">
+                * <?php if(isset($err_imagen)) echo $err_imagen;?>
+            </span>
+        </p>
+        
         <p><input type="submit" name="Crear"></p>
+
+
     </form>
 
     
