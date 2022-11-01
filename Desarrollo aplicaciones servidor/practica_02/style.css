@@ -1,7 +1,7 @@
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 10px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -13,7 +13,7 @@ input[type=text], select {
   .numberButton{
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 10px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -128,4 +128,11 @@ input[type=text], select {
   
   table.customTable thead {
     background-color: #7EA8F8;
+  }
+  .error{
+    color:red;
+  }
+  p{
+    display: flex;
+    align-items: center;
   }

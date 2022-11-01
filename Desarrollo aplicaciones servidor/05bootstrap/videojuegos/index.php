@@ -153,18 +153,22 @@
             <div class="col-6">
                 <h2>Nuevo videojuego</h2>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <p>Titulo: <input type="text" name="titulo">
+                    <div>
+                    <label class="form-label">Titulo: </label>
+                        <input type="text" name="titulo" class="form-control">
                         <span class="error">
                             * <?php if(isset($err_titulo)) echo $err_titulo ?>
                         </span>
-                    </p>
-                    <p>Precio: <input type="text" name="precio">
+                    
+                    </div>  
+                    <div>
+                    <label class="form-label">Precio: </label><input type="text" name="precio" class="form-control">
                         <span class="error">
                             * <?php if(isset($err_precio)) echo $err_precio ?>
                         </span>
-                    </p>
-                    <p>Consola:
-                        <select id="consolas" name="listaConsolas">
+                        </div>
+                    <div><label class="form-label">Consola: </label>
+                        <select id="consolas" name="listaConsolas" class="form-select">
                             <option value="" selected disabled hidden>Elige consola</option>
                             <option value="ps4">Ps4</option>
                             <option value="switch">Switch</option>
@@ -174,21 +178,24 @@
                         <span class="error">
                             * <?php if(isset($err_consola)) echo $err_consola ?>
                         </span>
-                    </p>
-                    <p>Descripcion: <textarea name="descripcion"></textarea>
+                    </div>
+                    <div><label class="form-label">Descripcion: </label>
+                    <textarea name="descripcion" class="form-control">
+                    </textarea>
                         <span class="error">
                             * <?php if(isset($err_descripcion)) echo $err_descripcion ?>
                         </span>
-                    </p>
+                    </div>
 
-                    <p>Imagen: <input type="file" name="imagen">
+                    <div><label class="form-label">Imagen: </label>
+                    <input type="file" name="imagen" class="form-control">
                         <span class="error">
                             * <?php if(isset($err_imagen)) echo $err_imagen;?>
                         </span>
-                    </p>
+                    </div>
 
-                    <p><input type="submit" name="Crear"></p>
-
+                    <!-- <input type="submit" name="Crear"> -->
+                    <button type="submit" class="btn btn-primary">Crear</button>
 
                 </form>
             </div>
