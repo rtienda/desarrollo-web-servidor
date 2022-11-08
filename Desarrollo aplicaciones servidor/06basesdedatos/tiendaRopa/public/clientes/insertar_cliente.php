@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php require "../../utils/database.php";
+        require "../header.php";
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             $usuario=$_POST["usuario"];
             $nombre=$_POST["nombre"];
@@ -17,8 +18,9 @@
             $segundo_apellido=$_POST["segundo_apellido"];
             $fecha_nacimiento=$_POST["fecha_nacimiento"];
             if(!empty($usuario) && !empty($nombre) && !empty($primer_apellido) && !empty($fecha_nacimiento)){
-                $segundo_apellido= !empty($segundo_apellido) ? "'$segundo_apellido'" : "null";
-                $sql="INSERT INTO clientes (usuario,nombre,primer_apellido,segundo_apellido,fecha_nacimiento) VALUES ('$usuario','$nombre','$primer_apellido',$segundo_apellido,$fecha_nacimiento')";
+                $segundo_apellido = !empty($segundo_apellido) ? "'$segundo_apellido'" : "NULL";
+
+                $sql="INSERT INTO clientes (usuario,nombre,primer_apellido,segundo_apellido,fecha_nacimiento) VALUES ('$usuario','$nombre','$primer_apellido',$segundo_apellido,'$fecha_nacimiento')";
                 if($conexion -> query($sql)==TRUE){
                     echo "<p>Cliente insertado</p>";
                 }else{

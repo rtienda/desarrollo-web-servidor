@@ -25,13 +25,14 @@
             <div class="col-9">
                 <a class="btn btn-primary" href="insertarPrenda.php">Nueva prenda</a>
                 <br><br>
-                <table class="table table-hover table-striped">
+                <table class="table table-striped table-hover">
                     <thead class="table table-dark">
                         <tr>
                             <th>Nombre</th>
                             <th>Talla</th>
                             <th>Precio</th>
                             <th>Categoria</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody class="table">
@@ -50,6 +51,12 @@
                             <td><?php echo $talla ?></td>
                             <td><?php echo $precio ?></td>
                             <td><?php echo $categoria ?></td>
+                            <td>
+                                <form action="mostrar_prenda.php" method="get">
+                                    <button class="btn btn-primary" type="submit">Ver</button>
+                                    <input type="hidden" name="id" value="<?php echo $row["id"]?>">
+                                </form>
+                            </td>
                         </tr>
                         <?php
                                 }
