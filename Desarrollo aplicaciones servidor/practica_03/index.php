@@ -67,7 +67,7 @@
             
         }
         ?>
-        <ul class="list-group">
+    <ul class="list-group">
         <?php
         foreach($array3 as $valor){
             ?><li class="list-group-item"><?php echo $valor ?></li><?php 
@@ -76,12 +76,78 @@
     </ul>
     <br>
 
-    <!-- Ejercicio4 -->
+    <!-- Ejercicio4
+    funciones y estructura match -->
+    <?php
+    $personas = [
+            ["Rafael", "Tienda Gonzalez",rand(1,99)],
+            ["Pepe", "Perez Reverte",rand(1,99)],
+            ["Bandolera", "Gonzalez Caso",rand(1,99)],
+    ];
+    ?>
+    <table class="table table-primary table-striped">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <td></td>
+        </tr>
+        <tr>
+            <?php
+            
+            foreach($personas as $persona){
+                list($nombre,$apellidos,$edad) = $persona;
+                ?>
+        <tr>
+            <td><?php echo $nombre ?></td>
+            <td><?php echo $apellidos?></td>
+            <td><?php echo $edad ?></td>
+            <td><?php echo queEdad($edad)?></td>
+            <?php } ?>
+        </tr>
+        <?php
+        function queEdad($num){
+            $result = match (true) {
+                $num > 65 => 'Es jubilado',
+                $num >= 18 => 'Es mayor de edad',
+                $num < 18 => 'Es menor de edad',
+            };
+            return($result);
+        }
 
+    ?>
+    </table>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
+    <?php
+        require "dniValido.php";
+        $dnis = [
+            ["77225946L", "Rafa"],
+            ["22222222Ñ", "Pepe"],
+            ["55555555Ñ", "Manolo"],
+    ];
+    ?>
+
+    <table class="table table-primary table-striped">
+        <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>¿Es valido?</th>
+        </tr>
+        <tr>
+            <?php
+            
+            foreach($dnis as $dni){
+                list($dni,$nombre) = $dni;
+                ?>
+        <tr>
+            <td><?php echo $dni ?></td>
+            <td><?php echo $nombre?></td>
+            <td><?php echo  dniValido($dni)? "Es valido":"No es valido" ; ?></td>
+            <?php } ?>
+        </tr>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
 
 </body>
 

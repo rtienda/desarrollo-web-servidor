@@ -29,13 +29,47 @@
                     <thead class="table table-dark">
                         <tr>
                             <th>Nombre</th>
+                            <th></th>
                             <th>Talla</th>
                             <th>Precio</th>
                             <th>Categoria</th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody class="table">
+                        <?php   //  Borrar prenda
+                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                $id = $_POST["id"];
+                                //  Consulta para coger la ruta de la imagen y luego borrarla
+                                $sql = "SELECT imagen FROM prendas WHERE id = '$id'";
+                                $resultado = $conexion -> query($sql);
+
+                                if($resultado -> num_rows > 0){
+                                    while($fila = $resultado -> fetch_assoc()){
+                                        $imagen = $fila["imagen"];
+                                    }
+                                    if(!empty($imagen)){
+                                        unlink("../..".$imagen);
+                                    }
+                                    
+                                }
+                                //  Consulta para borrar la prenda
+                                $sql = "DELETE FROM prendas WHERE id = '$id'";
+
+                                if ($conexion -> query($sql)) {
+                                ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Se ha borrado la prenda
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        <?php
+                                } else {
+                                    echo "<p>Error al borrar</p>";
+                                }
+                            }
+                        ?>
+
                         <?php
                             $sql = "SELECT * FROM prendas";
                             $resultado = $conexion -> query($sql);
@@ -45,9 +79,13 @@
                                     $talla = $row["talla"];
                                     $precio = $row["precio"];
                                     $categoria = $row["categoria"];
+                                    $imagen = $row["imagen"]
                                     ?>
                         <tr>
                             <td><?php echo $nombre ?></td>
+                            <td>
+                                <img width="50" height="50" src="../..<?php echo $imagen ?>">
+                            </td>
                             <td><?php echo $talla ?></td>
                             <td><?php echo $precio ?></td>
                             <td><?php echo $categoria ?></td>
@@ -55,6 +93,12 @@
                                 <form action="mostrar_prenda.php" method="get">
                                     <button class="btn btn-primary" type="submit">Ver</button>
                                     <input type="hidden" name="id" value="<?php echo $row["id"]?>">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="" method="post">
+                                    <button class="btn btn-danger" type="submit">Borrar</button>
+                                    <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
                                 </form>
                             </td>
                         </tr>

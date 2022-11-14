@@ -15,20 +15,43 @@
         require "../../utils/database.php";
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $nombre = $_POST["nombre"];
-            $talla = $_POST["talla"];
+            if(isset($_POST["talla"])){
+                $talla=$_POST["talla"];
+            }else{
+                $talla="";
+            }
+            // $talla = $_POST["talla"];
             $precio = $_POST["precio"];
             if(isset($_POST["categoria"])){
                 $categoria = $_POST["categoria"];
             }else{
                 $categoria="";
             }
-            
+            $file_name=$_FILES["imagen"]["name"];
+            $file_temp_name=$_FILES["imagen"]["tmp_name"];
+            $path = "../../resources/images/prendas/".$file_name;
+
+           
 
             if(!empty($nombre)&&!empty($talla)&&!empty($precio)){
-                if(!empty($categoria)){
-                    $sql = "INSERT INTO prendas (nombre,talla,precio,categoria) VALUES ('$nombre','$talla','$precio','$categoria')";
+                //  Subimos laa imagen a la carpeta
+                if(move_uploaded_file($file_temp_name,$path)){
+                    echo "<p>Fichero movido con exito</p>";
                 }else{
-                    $sql = "INSERT INTO prendas (nombre,talla,precio) VALUES ('$nombre','$talla','$precio')";
+                    echo "<p>No se ha podido mover el fichero</p>";
+                }
+                //  Insertamos la prenda en la base de datos
+                if(!empty($file_name)){
+                    $imagen = "/resources/images/prendas/". $file_name;
+                } else {
+                    $imagen="";
+                }
+                
+                if(!empty($categoria)){
+                    
+                    $sql = "INSERT INTO prendas (nombre,talla,precio,categoria,imagen) VALUES ('$nombre','$talla','$precio','$categoria','$imagen')";
+                }else{
+                    $sql = "INSERT INTO prendas (nombre,talla,precio,imagen) VALUES ('$nombre','$talla','$precio','$imagen')";
 
                 }
                 if($conexion -> query($sql)== 'TRUE'){
@@ -50,7 +73,7 @@
         <h1>Nueva Prenda</h1>
         <div class="row">
             <div class="col-6">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label class="form-label">Nombre</label>
                         <input class="form-control" type="text" name="nombre">
@@ -79,6 +102,10 @@
                             <option value="PANTALONES">Pantalones</option>
                             <option value="ACCESORIOS">Accesorios</option>
                         </select>
+                    <div class="form-group mb-3"></div>
+                        <label class="form-label">Imagen</label>
+                        <input class="form-control" type="file" name="imagen">
+                    </div>
                     <button class="btn btn-primary  mt-3    " type="submit">Crear</button>
                     <a class="btn btn-secondary mt-3" href="index.php">Volver</a>
                 </form>
