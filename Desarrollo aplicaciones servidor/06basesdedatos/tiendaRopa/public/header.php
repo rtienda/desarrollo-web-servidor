@@ -18,6 +18,8 @@
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/prendas/">Prendas</a>
             <a class="nav-item nav-link"
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/clientes">Clientes</a>
+            <a class="nav-item nav-link" 
+                href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras">Compras</a>
         </div>
     </div>
 </nav>
