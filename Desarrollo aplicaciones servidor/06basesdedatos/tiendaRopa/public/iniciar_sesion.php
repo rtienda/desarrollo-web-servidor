@@ -23,6 +23,8 @@
             if($resultado -> num_rows>0){
                 while ($fila = $resultado -> fetch_assoc()){
                     $hash_contraseña = $fila["contrasena"];
+                    $rol = $fila["rol"];
+                    $cliente_id=$fila["id"];
                 }
                 $acceso_valido=password_verify($contraseña,$hash_contraseña);
 
@@ -30,6 +32,9 @@
                     echo "<h2>Acceso valido</h2>";
                     session_start();
                     $_SESSION["usuario"] = $usuario;
+                    $_SESSION["rol"]=$rol;
+                    $_SESSION["cliente_id"]=$cliente_id;
+
                     header("location: index.php");
                 }else{
                     echo "<h2>Contraseña equivocada</h2>";

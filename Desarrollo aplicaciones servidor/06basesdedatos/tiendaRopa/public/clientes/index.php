@@ -32,6 +32,7 @@
                             <th>Primer apellido</th>
                             <th>Segundo apellido</th>
                             <th>Fecha de nacimiento</th>
+                            <th>rol</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -84,6 +85,7 @@
                                     $primer_apellido = $fila["primer_apellido"];
                                     $segundo_apellido = $fila["segundo_apellido"];
                                     $fecha_nacimiento = $fila["fecha_nacimiento"];
+                                    $rol=$fila["rol"];
                                     //$avatar = $fila["avatar"];
                                     ?>
                                     <tr>
@@ -95,6 +97,7 @@
                                         <td><?php echo $primer_apellido ?></td>
                                         <td><?php echo $segundo_apellido ?></td>
                                         <td><?php echo $fecha_nacimiento ?></td>
+                                        <td><?php echo $rol ?></td>
                                         <td>
                                             <form action="mostrar_prenda.php" method="get">
                                                 <button class="btn btn-primary" type="submit">Ver</button>

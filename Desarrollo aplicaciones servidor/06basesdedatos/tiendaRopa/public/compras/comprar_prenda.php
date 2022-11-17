@@ -10,17 +10,22 @@
 </head>
 <body>
     <?php
+     require "../../utils/control_acceso.php";
         require "../header.php";
         require "../../utils/database.php";
+       
+        control();
     ?>
-
+<p><?php echo $_SESSION["cliente_id"]?></p>
     <?php
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prenda_id = $_POST["prenda"];
             $cantidad = $_POST["cantidad"];
-            $cliente_id = 10;
+            $cliente_id = $_SESSION["cliente_id"];
             $fecha = date('Y-m-d H:i:s');   //  2022-11-15 09:25
-
+            echo $prenda_id;
+            echo $cantidad;
+            echo $cliente_id;
             $sql = "INSERT INTO clientes_prendas 
                 (cliente_id, prenda_id, cantidad, fecha) 
                 VALUES 
@@ -53,9 +58,9 @@
                             $resultado = $conexion -> query($sql);
 
                             if($resultado -> num_rows > 0){
-                                while ($fila = $resultado -> fech_assoc()){
+                                while ($fila = $resultado -> fetch_assoc()){
                                     ?>
-                                    <form action="">
+                                    <form action="" method="post">
                                     <tr>
                                         <td><?php echo $fila["nombre"]?></td>
                                         <td>

@@ -11,7 +11,10 @@
 </head>
 
 <body>
+<?php require "../../utils/control_acceso.php"?>
+
     <?php
+        require "../header.php";
         require "../../utils/database.php";
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $nombre = $_POST["nombre"];
@@ -69,7 +72,7 @@
         }
     ?>
     <div class="container">
-    <?php require '../header.php'?>
+    
         <h1>Nueva Prenda</h1>
         <div class="row">
             <div class="col-6">

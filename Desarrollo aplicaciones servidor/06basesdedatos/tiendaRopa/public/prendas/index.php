@@ -12,6 +12,8 @@
 </head>
 
 <body>
+<?php require "../../utils/control_acceso.php"?>
+
     <?php require '../header.php'?>
 
     <?php

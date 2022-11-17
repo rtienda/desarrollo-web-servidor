@@ -16,14 +16,15 @@
             $usuario= $_POST["usuario"];
             $contraseña=$_POST["contraseña"];
             $nombre=$_POST["nombre"];
+            $rol=$_POST["rol"];
             $hash_contraseña=password_hash($contraseña,PASSWORD_DEFAULT);
             echo "<p>Usuario: $usuario</p>";
             echo "<p>Contraseña: $contraseña</p>";
             echo "<p>Nombre: $nombre</p>";
             echo "<p>Hash Contraseña: $hash_contraseña</p>";
-
-            $sql = "INSERT INTO usuarios (usuario, contrasena, nombre)
-                VALUES ('$usuario','$hash_contraseña','$nombre')";
+            echo "<p>Rol: $rol</p>";
+            $sql = "INSERT INTO usuarios (usuario, contrasena, nombre, rol)
+                VALUES ('$usuario','$hash_contraseña','$nombre','$rol')";
 
             if($conexion -> query($sql)=="TRUE"){
                 echo "<p>Usuario registrado</p>";
@@ -49,6 +50,13 @@
                     <div class="form-group mb-3">
                         <label class="form-label">Nombre</label>
                         <input class="form-control" name="nombre" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <select class="form-select" name="rol">
+                            <option value="" selected disabled hidden>--Selecciona un rol--</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="usuario">Usuario</option>
+                        </select>
                     </div>
                     <div class="form-group mb-3">
                         <button class="btn btn-primary" type="submit">Registrarse</button>

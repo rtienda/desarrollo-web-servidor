@@ -20,12 +20,13 @@
             $primer_apellido=$_POST["primer_apellido"];
             $segundo_apellido=$_POST["segundo_apellido"];
             $fecha_nacimiento=$_POST["fecha_nacimiento"];
-            if(!empty($usuario) && !empty($nombre) && !empty($primer_apellido) && !empty($fecha_nacimiento)){
+            $rol=$_POST["rol"];
+            if(!empty($usuario) && !empty($nombre) && !empty($primer_apellido) && !empty($fecha_nacimiento) && !empty($rol)){
                 $segundo_apellido = !empty($segundo_apellido) ? "'$segundo_apellido'" : "NULL";
 
                 $sql="INSERT INTO clientes (usuario,nombre,contrasena,primer_apellido,segundo_apellido,
-                fecha_nacimiento) VALUES ('$usuario','$nombre','$hash_contraseña','$primer_apellido',
-                $segundo_apellido,'$fecha_nacimiento')";
+                fecha_nacimiento,rol) VALUES ('$usuario','$nombre','$hash_contraseña','$primer_apellido',
+                $segundo_apellido,'$fecha_nacimiento','$rol')";
 
 
             
@@ -67,6 +68,13 @@
                     <div class="form-group mb-3">
                         <label class="form-label">Fecha de nacimiento</label>
                         <input class="form-control" name="fecha_nacimiento" type="date">
+                    </div>
+                    <div class="form-group mb-3">
+                        <select class="form-select" name="rol">
+                            <option value="" selected disabled hidden>--Selecciona un rol--</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="usuario">Usuario</option>
+                        </select>
                     </div>
                     <div class="form-group mb-3">
                         <button class="btn btn-primary" type="submit">Registrarse</button>

@@ -18,9 +18,19 @@
                 session_start();
                 if(!isset($_SESSION["usuario"])){
                     header("location: iniciar_sesion.php");
-                }else{
-                    echo "<p>Has iniciado sesion ".$_SESSION["usuario"]."</p>";
                 }
+                
+                ?>
+                <p>Esto lo puede ver todo el mundo</p>
+                <?php
+                if($_SESSION["rol"]=="administrador"){
+                    ?>
+                        <p>Esto solo lo pueden ver los admins</p>
+                    <?php
+                }
+               
+                    echo "<p>Has iniciado sesion ".$_SESSION["usuario"]." con rol: ".$_SESSION["rol"]."</p>";
+                
         ?>
 
         <a href="desconectarse.php">Cerrar sesion</a>

@@ -8,6 +8,8 @@
     <title>Compras</title>
 </head>
 <body>
+<?php require "../../utils/control_acceso.php"?>
+
     <?php require '../../utils/database.php' ?>
     <?php require '../header.php' ?>
 

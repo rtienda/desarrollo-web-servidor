@@ -9,6 +9,8 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
+<?php require "../../utils/control_acceso.php"?>
+
     <?php require "../../utils/database.php";
         require "../header.php";
         if($_SERVER["REQUEST_METHOD"]=="POST"){
