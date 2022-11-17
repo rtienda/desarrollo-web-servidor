@@ -15,7 +15,7 @@
         <?php
             require 'header.php';
             require "../utils/control_acceso.php";
-            //control();
+            control();
         ?>
         <br><br>
         <h1>Bienvenido a nuestra tienda!</h1>
