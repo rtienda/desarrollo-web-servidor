@@ -23,7 +23,7 @@
             <a class="nav-item nav-link" 
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras/comprar_prenda.php">Comprar prenda</a>
             <?php 
-                // session_start();
+                //session_start();
                 if(!isset($_SESSION["usuario"])){
             ?>
             <a class="nav-item nav-link" 

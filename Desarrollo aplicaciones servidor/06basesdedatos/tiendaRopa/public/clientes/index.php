@@ -10,10 +10,11 @@
 <body>
     <div class="container">
         <?php require '../../utils/database.php' ?>
-        <?php require '../header.php' ?>
         <?php  require "../../utils/control_acceso.php";
                 control();
                 ?>
+        <?php require '../header.php' ?>
+    
         <br>
         <h1>Listado de clientes</h1>
 
