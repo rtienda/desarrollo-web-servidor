@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="containeer">
+    <div class="container">
 
         <?php
                 session_start();

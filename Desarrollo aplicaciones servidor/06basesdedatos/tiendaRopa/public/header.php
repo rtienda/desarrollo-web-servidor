@@ -22,7 +22,20 @@
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras">Compras</a>
             <a class="nav-item nav-link" 
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras/comprar_prenda.php">Comprar prenda</a>
-
+            <?php 
+                // session_start();
+                if(!isset($_SESSION["usuario"])){
+            ?>
+            <a class="nav-item nav-link" 
+                href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/desconectarse.php">Cerrar Sesion</a>
+            <?php
+                }else{
+            ?>
+            <a class="nav-item nav-link" 
+                href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/iniciar_sesion.php">Iniciar Sesion</a>
+            <?php
+                }
+            ?>
         </div>
     </div>
 </nav>

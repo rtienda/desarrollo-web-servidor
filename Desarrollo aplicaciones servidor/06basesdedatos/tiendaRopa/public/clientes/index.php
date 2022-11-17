@@ -11,6 +11,9 @@
     <div class="container">
         <?php require '../../utils/database.php' ?>
         <?php require '../header.php' ?>
+        <?php  require "../../utils/control_acceso.php";
+                control();
+                ?>
         <br>
         <h1>Listado de clientes</h1>
 
@@ -112,7 +115,7 @@
                 </table>
             </div>
             <div class="col-3">
-                <img width="200" heigth="200" src="../../resources/images/ropa.jpg">
+                <img width="200" heigth="200" src="../../resources/images/prendas/descarga.png">
             </div>
         </div>
     </div>
