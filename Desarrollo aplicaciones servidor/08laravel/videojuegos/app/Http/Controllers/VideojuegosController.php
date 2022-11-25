@@ -38,5 +38,11 @@ class VideojuegosController extends Controller
         return redirect("videojuegos");
     }
 
+    public function show($id){
+        $videojuego=Videojuego::find($id);
+        return view("videojuegos/show",[
+            "videojuego" => $videojuego
+        ]);
+    }
 
 }

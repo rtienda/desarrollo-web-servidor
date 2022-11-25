@@ -25,6 +25,7 @@
                             <th>Precio</th>
                             <th>PEGI</th>
                             <th>Descripcion</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,6 +35,11 @@
                                 <td>{{$videojuego -> precio}}</td>
                                 <td>{{$videojuego -> pegi}}</td>
                                 <td>{{$videojuego -> descripcion}}</td>
+                                <td>
+                                    <form method="get" action="{{route('videojuegos.show',['videojuego' => $videojuego -> id])}}">
+                                        <button class="btn btn-primary" type="submit">Ver</button>
+                                    </form>
+                                </td>
                             </tr>
                             {{-- Comentario Blade --}}
                         @endforeach
