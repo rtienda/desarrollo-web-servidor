@@ -14,15 +14,33 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active" aria-current="page"
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/">Inicio</a>
-            <a class="nav-item nav-link"
+            
+
+                <?php 
+                 //require "../utils/control_acceso.php";
+                 //require "../utils/control_acceso.php";
+                 //control();
+                if($_SESSION["rol"]=="administrador"){
+                    ?>
+                    <a class="nav-item nav-link"
+                    href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/clientes">Clientes</a>
+                    <a class="nav-item nav-link"
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/prendas/">Prendas</a>
-            <a class="nav-item nav-link"
-                href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/clientes">Clientes</a>
-            <a class="nav-item nav-link" 
+                <a class="nav-item nav-link" 
                 href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras">Compras</a>
+                    <?php
+                }
+
+            ?>
+           
+
             <a class="nav-item nav-link" 
-                href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras/comprar_prenda.php">Comprar prenda</a>
+                href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras/comprar_prenda.php">Nueva Compra</a>
+            <a class="nav-item nav-link" href="http://localhost/Desarrollo%20aplicaciones%20servidor/06basesdedatos/tiendaRopa/public/compras/cliente_compras.php">Mis compras</a>
             <?php 
+                if($_SESSION["rol"]=="administrador"){
+
+                }
                 //session_start();
                 // if(isset($_SESSION["usuario"])){
             ?>

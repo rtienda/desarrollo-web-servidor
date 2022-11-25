@@ -15,6 +15,17 @@
             echo "<li>$consola</li>";
         }
         echo "</ul>";
+        
     ?>
+    <p>{{$mensaje}}</p>
+    <ul>
+        @foreach($consolas as $consola)
+            <li>{{$consola}}</li>
+        @endforeach
+    </ul>
+    @php
+        $hola="Hola mundo";
+    @endphp
+    <p>{{$hola}}</p>
 </body>
 </html>

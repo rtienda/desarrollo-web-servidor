@@ -9,11 +9,15 @@
 </head>
 <body>
 <?php require "../../utils/control_acceso.php"?>
-
+<?php
+ 
+        //control();
+    ?>
     <?php require '../../utils/database.php' ?>
-    <?php require '../header.php' ?>
+
 
     <div class="container">
+    <?php require '../header.php' ?>
     <h1>Listado de compras</h1>
 
         <div class="row">

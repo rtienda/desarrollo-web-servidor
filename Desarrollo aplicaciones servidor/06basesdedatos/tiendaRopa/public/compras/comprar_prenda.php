@@ -9,36 +9,40 @@
 
 </head>
 <body>
+<div class="container">
     <?php
      require "../../utils/control_acceso.php";
-        require "../header.php";
-        require "../../utils/database.php";
+     require "../header.php";
+    require "../../utils/database.php";
        
-        control();
+        //control();
     ?>
-<p><?php echo $_SESSION["cliente_id"]?></p>
+<p><?php //echo $_SESSION["cliente_id"]?></p>
     <?php
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prenda_id = $_POST["prenda"];
             $cantidad = $_POST["cantidad"];
             $cliente_id = $_SESSION["cliente_id"];
             $fecha = date('Y-m-d H:i:s');   //  2022-11-15 09:25
-            echo $prenda_id;
-            echo $cantidad;
-            echo $cliente_id;
+            //echo $prenda_id;
+            //echo $cantidad;
+            //echo $cliente_id;
             $sql = "INSERT INTO clientes_prendas 
                 (cliente_id, prenda_id, cantidad, fecha) 
                 VALUES 
                 ('$cliente_id', '$prenda_id', '$cantidad', '$fecha')";
 
             if ($conexion -> query($sql) == "TRUE") {
-                echo "<p>Compra realizada</p>";
+                echo "<div class='alert alert-success' role='alert'>
+                Compra realizada</div>";
             } else {
-                echo "<p>Error al comprar</p>";
+                echo "<div class='alert alert-danger' role='alert'>
+                Error al comprar</div>";
             }
         }
     ?>
-    <div class="container">
+
+
         <h1>Comprar prenda</h1>
 
         <div class="row">

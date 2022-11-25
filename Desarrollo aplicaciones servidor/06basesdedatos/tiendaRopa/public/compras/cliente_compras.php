@@ -16,8 +16,9 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        $usuario = $_GET["usuario"];
+        //$usuario = $_GET["usuario"];
     }
+    $usuario=$_SESSION["usuario"];
     ?>
 
         <br>

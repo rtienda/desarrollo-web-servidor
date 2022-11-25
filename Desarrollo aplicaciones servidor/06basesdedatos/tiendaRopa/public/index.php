@@ -12,16 +12,21 @@
 
 <body>
     <div class="container">
+        
+    <div class="row">
+            <div class="col-9">
     <?php require "../utils/control_acceso.php"?>
 
         <?php
             require 'header.php';
            
-            control();
+           // control();
         ?>
         <br><br>
         <h1>Bienvenido a nuestra tienda!</h1>
     </div>
+</div>
+</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

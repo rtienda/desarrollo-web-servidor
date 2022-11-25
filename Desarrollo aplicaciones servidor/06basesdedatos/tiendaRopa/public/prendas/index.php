@@ -13,8 +13,11 @@
 
 <body>
 <?php require "../../utils/control_acceso.php"?>
-
-    <?php require '../header.php'?>
+<?php
+   
+        //control();
+    ?>
+    
 
     <?php
         require "../../utils/database.php";
@@ -22,6 +25,7 @@
 
 
     <div class="container">
+    <?php require '../header.php'?>
         <h1>Listado de prendas</h1>
         <div class="row">
             <div class="col-9">

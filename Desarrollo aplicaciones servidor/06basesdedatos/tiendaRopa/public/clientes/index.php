@@ -11,7 +11,7 @@
     <div class="container">
         <?php require '../../utils/database.php' ?>
         <?php  require "../../utils/control_acceso.php";
-                control();
+                // control();
                 ?>
         <?php require '../header.php' ?>
     

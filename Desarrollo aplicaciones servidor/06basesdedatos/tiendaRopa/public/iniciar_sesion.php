@@ -12,11 +12,11 @@
     
 <?php
         require "../utils/database.php";
-        require "header.php";
+        //require "header.php";
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             $usuario= $_POST["usuario"];
             $contraseña=$_POST["contraseña"];
-
+            
 
             $sql = "Select * from clientes where usuario = '$usuario'";
             $resultado = $conexion -> query($sql);
