@@ -26,8 +26,8 @@ Route::get('/consolas/info', function () {
     return view('consolas/info');
 });
 
-Route::get('/consolas/create', [ConsolasController::class, 'create']);
-Route::get('/consolas',[ConsolasController::class, 'index']);
+//Route::get('/consolas/create', [ConsolasController::class, 'create']);
+//Route::get('/consolas',[ConsolasController::class, 'index']);
 /*
 Route::get("/videojuegos",[VideojuegosController::class,"index"]);
 Route::get("/videojuegos/create",[
@@ -35,3 +35,4 @@ Route::get("/videojuegos/create",[
     */
 
 Route::resource("/videojuegos",VideojuegosController::class);
+Route::resource("/consolas",ConsolasController::class);

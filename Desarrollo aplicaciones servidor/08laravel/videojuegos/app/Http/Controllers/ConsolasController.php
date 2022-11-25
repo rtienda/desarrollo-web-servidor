@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Consola;
 class ConsolasController extends Controller
 {
     /**
@@ -13,21 +13,12 @@ class ConsolasController extends Controller
      */
     public function index()
     {
-        //Aqui iria la logica del metodo
-        $mensaje = "Esta es la lista de consolas";
-        $consolas = [
-            "Play 4",
-            "Play 5",
-            "Switch",
-            "Xbox series x"
-        ];
-
+        $consolas = Consola::all();
         return view("consolas/index",[
-            "mensaje" => $mensaje,
             "consolas" => $consolas
         ]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
