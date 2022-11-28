@@ -13,7 +13,8 @@
         <h1>Editar videojuego</h1>
         <div class="row">
             <div class="col-9">
-                @csrf
+                <form action="{{route('videojuegos.update',['videojuego' => $videojuego -> id])}}" method="get" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group mb-3">
                         <label class="form-label">Titulo</label>
                         <input class="form-control" type="text" name="titulo" value="{{$videojuego->titulo}}">
@@ -37,7 +38,7 @@
                         <textarea name="descripcion" class="form-control" value="{{$videojuego->descripcion}}">{{$videojuego->descripcion}}
                         </textarea>
                     </div>
-                    <button class="btn btn-primary" type="submit">Crear</button>
+                <button class="btn btn-primary" type="submit">Editar</button>
                 </form>
             
             </div>

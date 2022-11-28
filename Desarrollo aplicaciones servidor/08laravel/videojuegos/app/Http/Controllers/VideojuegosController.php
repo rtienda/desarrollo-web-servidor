@@ -59,4 +59,16 @@ class VideojuegosController extends Controller
             "videojuego" =>$videojuego
         ]);
     }
+
+    public function update(Request $request,$id){
+        $videojuego=Videojuego::find($id);
+        $videojuego -> titulo = $request -> input("titulo");
+        $videojuego -> precio = $request -> input("precio");
+        $videojuego -> pegi = $request -> input("pegi");
+        $videojuego -> descripcion = $request -> input("descripcion");
+        $videojuego -> save();
+        //DB::table("videojuegos")->where("id","=",$id)->delete();
+        return redirect("videojuego");
+
+    }
 }

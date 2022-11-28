@@ -39,6 +39,15 @@ class ConsolasController extends Controller
     public function store(Request $request)
     {
         //
+        $consola=new Consola;
+        $consola->nombre=$request->input('nombre');
+        $consola->ano_salida=$request->input('ano_salida');
+        $consola->generacion=$request->input('generacion');
+        $consola->descripcion=$request->input('descripcion');
+
+        $consola->save();
+
+        return redirect('consolas');
     }
 
     /**

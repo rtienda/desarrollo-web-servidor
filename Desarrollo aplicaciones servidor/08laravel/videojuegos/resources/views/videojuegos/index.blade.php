@@ -44,6 +44,7 @@
                                 </td>
                                 <td>
                                     <form method="get" action="{{route('videojuegos.edit',['videojuego' => $videojuego -> id])}}">
+                                      
                                         <button class="btn btn-secondary" type="submit">Editar</button>
                                     </form>
                                 </td>

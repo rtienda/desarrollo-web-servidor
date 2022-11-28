@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Compania;
+
 
 class CompaniasController extends Controller
 {
@@ -14,6 +16,14 @@ class CompaniasController extends Controller
     public function index()
     {
         //
+        $companias=Compania::all();
+
+        $mensaje= "Aquí tenemos un listado de compañias";
+
+        return View('companias/index',[
+            'mensaje'=>$mensaje,
+            'companias'=>$companias
+        ]);
     }
 
     /**
@@ -24,6 +34,8 @@ class CompaniasController extends Controller
     public function create()
     {
         //
+        return view('companias/create');
+
     }
 
     /**
@@ -35,6 +47,14 @@ class CompaniasController extends Controller
     public function store(Request $request)
     {
         //
+        $compania=new Compania;
+        $compania->nombre=$request->input('nombre');
+        $compania->sede=$request->input('sede');
+        $compania->fecha_fundacion=$request->input('fecha_fundacion');
+
+        $compania->save();
+
+        return redirect('companias');
     }
 
     /**
