@@ -10,9 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Index Videojuegos</h1>
+        <h1>Busqueda de Videojuegos</h1>
 
-    <p>{{ $mensaje }}</p>
+    {{-- <p>{{ $mensaje }}</p> --}}
 
     <a href="{{route('videojuegos.create')}}" class="btn btn-success">Crear videojuego</a>
     <form action="{{route("videojuegos.search")}}" method="get">

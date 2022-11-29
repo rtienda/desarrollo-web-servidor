@@ -68,7 +68,20 @@ class VideojuegosController extends Controller
         $videojuego -> descripcion = $request -> input("descripcion");
         $videojuego -> save();
         //DB::table("videojuegos")->where("id","=",$id)->delete();
-        return redirect("videojuego");
+        return redirect("videojuegos");
+
+    }
+
+    /**
+     * Busca todos los videojuegos que contengan la palabra introducida en el buscador
+     * @param string $titulo
+     */
+    public function search(Request $request){
+        $titulo=$request -> input("titulo");
+        $videojuegos= DB::table("videojuegos")->where("titulo","like","%".$titulo."%")->get();
+        return view("videojuegos/search",[
+            "videojuegos"=>$videojuegos
+        ]);
 
     }
 }
