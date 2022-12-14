@@ -38,5 +38,16 @@
     <div id="renoDch"><img src="pngwing.png" alt=""></div>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <audio controls loop id="audio" src="Padoru.mp3"></audio>
+    <script>
+          // Primero, obtenemos una referencia al div y al elemento de audio
+            var playButton = document.getElementById("cuerpo");
+            var audioElement = document.getElementById("audio");
+
+            // Luego, agregamos un controlador de eventos al div que reproduzca la canción cuando se haga clic en él
+            playButton.addEventListener("click", function() {
+            audioElement.play();
+            });
+    </script>
 </body>
 </html>

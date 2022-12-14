@@ -33,4 +33,7 @@ function renoD(){
     document.getElementById("renoDch").classList.toggle('renoDerechaMovil');
 
 }
+
+
+// document.getElementById("audio").play();
 //toggle class
