@@ -38,6 +38,8 @@ body{
     border: solid;
     border-color: #f7be10;
     border-radius: 25px;
+    margin-bottom: 15px;
+
     /* z-index: 1;  */
 }
 
