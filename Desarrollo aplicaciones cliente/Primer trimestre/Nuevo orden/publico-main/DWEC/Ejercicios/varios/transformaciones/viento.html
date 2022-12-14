@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--     Lenguajes de Marcas
+        CSS3 - Efectos sobre imágenes
+        Mayo de 2022
+        Prof. Carlos Boni. -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variante VIENTO infinito con Dolly zoom - Efecto CSS puro - Prof. Carlos Boni</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        #contenedor {
+            width: 70%;
+            height: 70%;
+            border: 2px solid black;
+            background-color: gainsboro;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+
+            /* ocultará los contenidos que se desborden */
+            overflow: hidden;
+
+            /* permite superponer imagenes contenidas */
+            position: relative;
+        }
+
+        #portaFotoFondo {
+            /* la superpone dentro del contenedor */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #portaFotoFrente {
+            /* la superpone dentro del contenedor */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            /* quedará perfectamente centrada */
+            width: 20%;
+            height: 20%;
+            margin: auto;
+        }
+
+        #laFotoFondo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            /* siempre con zoom inicial 200% para que todos los ejemplos se vean igual */
+
+            /* Chrome - Edge */
+            transform: scale(2);
+            transform-origin: top left;
+
+            /* IE 9 */
+            -ms-transform: scale(2);
+            -ms-transform-origin: top left;
+
+            /* Safari and Chrome */
+            -webkit-transform: scale(2);
+            -webkit-transform-origin: top left;
+
+            /* Opera */
+            -o-transform: scale(2);
+            -o-transform-origin: top left;
+
+            /* Firefox */
+            -moz-transform: scale(2);
+            -moz-transform-origin: top left;
+        }
+
+        #laFotoFrente {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* AÑADO estilos infinitos para el efecto ken burns - paneo de la imagen de fondo */
+        #laFotoFondo {
+            /* efecto de varios segundos para que parezca continuo. */
+            animation: desliza 6s ease;
+            -ms-animation: desliza 6s ease;
+            -webkit-animation: desliza 6s ease;
+            -o-animation: desliza 6s ease;
+            -moz-animation: desliza 6s ease;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes desliza {
+            0% {
+                /* comienzo con la imagen tal cual está pues queda mejor */
+            }
+
+            100% {
+                transform: scale(1.6);
+                -ms-transform: scale(1.6);
+                -webkit-transform: scale(1.6);
+                -o-transform: scale(1.6);
+                -moz-transform: scale(1.6);
+            }
+        }
+
+        /* AÑADO efecto del viento para la foto del frente */
+        #laFotoFrente {
+            /* puesto aquí hace que la transición sea suave al ponerse y quitarse */
+            transition: all 4s ease;
+
+            /* a lo lejos el avión se ve pequeño y opacado */
+            transform: scale(0.2);
+            opacity: 0.2;
+        }
+
+        #laFotoFrente {
+            /* efecto que dura igual que el del fondo. */
+            animation: tormenta 6s ease;
+            -ms-animation: tormenta 6s ease;
+            -webkit-animation: tormenta 6s ease;
+            -o-animation: tormenta 6s ease;
+            -moz-animation: tormenta 6s ease;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes tormenta {
+            0% {
+                transform: scale(0.2) rotate(0deg);
+                -ms-transform: scale(0.2) rotate(0deg);
+                -webkit-transform: scale(0.2) rotate(0deg);
+                -o-transform: scale(0.2) rotate(0deg);
+                -moz-transform: scale(0.2) rotate(0deg);
+                opacity: 0.2;
+            }
+            20% {
+                transform: scale(0.5) rotate(-10deg);
+                -ms-transform: scale(0.5) rotate(-10deg);
+                -webkit-transform: scale(0.5) rotate(-10deg);
+                -o-transform: scale(0.5) rotate(-10deg);
+                -moz-transform: scale(0.5) rotate(-10deg);
+                opacity: 0.3;
+            }
+            40% {
+                transform: scale(1) rotate(10deg);
+                -ms-transform: scale(1) rotate(10deg);
+                -webkit-transform: scale(1) rotate(10deg);
+                -o-transform: scale(1) rotate(10deg);
+                -moz-transform: scale(1) rotate(10deg);
+                opacity: 0.4;
+            }
+            60% {
+                transform: scale(2) rotate(-20deg);
+                -ms-transform: scale(2) rotate(-20deg);
+                -webkit-transform: scale(2) rotate(-20deg);
+                -o-transform: scale(2) rotate(-20deg);
+                -moz-transform: scale(2) rotate(-20deg);
+                opacity: 0.6;
+            }
+            80% {
+                transform: scale(3) rotate(15deg);
+                -ms-transform: scale(3) rotate(15deg);
+                -webkit-transform: scale(3) rotate(15deg);
+                -o-transform: scale(3) rotate(15deg);
+                -moz-transform: scale(3) rotate(15deg);
+                opacity: 0.8;
+            }                                    
+            100% {
+                transform: scale(4) rotate(-5deg);
+                -ms-transform: scale(4) rotate(-5deg);
+                -webkit-transform: scale(4) rotate(-5deg);
+                -o-transform: scale(4) rotate(-5deg);
+                -moz-transform: scale(4) rotate(-5deg);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="portaFotoFondo">
+            <img id="laFotoFondo" alt="Foto Cielo" title="Titulo Foto Cielo" src="./cielo.webp" />
+        </div>
+        <div id="portaFotoFrente">
+            <img id="laFotoFrente" alt="Foto Avion" title="Titulo Foto Avion" src="./avion.png" />
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--
+        Lenguajes de Marcas - prof. Carlos Boni - 2022
+
+        DESAFÍO sombras
+
+         Hay que completar esta página web de forma tal que:
+        
+        poniendo el ratón sobre una imagen (hover) el sol está detrás
+        pero haciendo clic (active) el sol está delante
+        La altura del sol determina el largo de la sombra
+        Pondremos dos campos input
+        (1) que acepte grados de altura del sol        
+        Los valores posibles son números enteros entre 20 y 80 grados,
+        típicos de Málaga.
+        (2) un campo tipo radio con estas opciones texto-valor:
+            izquierda: -45 grados, 
+            centro: 0 grados,
+            derecha: 45 grados.
+        (3) BOTÓN para aplicar los valores que estén en los campos input.
+
+        USAR como base los ejemplos efectos.html y efectos-javascript.html y
+		consultar esta web: https://zellwk.com/blog/css-values-in-js/
+        
+    -->
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Sombras</title>
+    <style>
+       
+       *{
+           margin:0px;
+           padding:0px;
+           box-sizing:border-box;
+       }
+
+       #contenedor {
+           margin-left:120px;
+           margin-top:120px;
+       }
+
+        #portafotos, #portacopia{
+            height:150px;
+
+        }
+
+        #fotooriginal, #fotocopia{
+            height:100%;
+            object-fit:cover;
+        }
+        #fotocopia{
+            /* aumenta y desplaza */
+            transform: scale(1,-1) skewX(-30deg) translate(40%,100%);
+            /* cambia el punto a partir del cual genera las transformaciones */
+            transform-origin:bottom;
+            /* desenfoca y quita colores */
+            filter: blur(2px) grayscale(100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="portafotos">
+            <img id="fotooriginal"src="./gato.jpg"/>
+        </div>
+        <div id="portacopia">
+            <img id="fotocopia" src="./gato.jpg"/>
+        </div>
+    </div>
+</body>
+</html>

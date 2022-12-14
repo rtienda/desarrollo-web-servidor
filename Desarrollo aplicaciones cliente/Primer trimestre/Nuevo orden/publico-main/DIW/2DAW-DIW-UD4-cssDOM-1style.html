@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+HTML
+web o pagina: Ejercicios Unidad 4 - Diseño de Interfaces Web
+autor: Prof. Carlos Boni
+fecha: Diciembre 2020
+-->
+
+<head>
+	<title>2DAW-DIW-UD4. Prof.Carlos Boni</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="00-modelo.css">
+	<style>
+	/* aquí estilos aplicados solo a esta pagina */
+	body {
+		background-color: rgba(0, 0, 128, 0.1); /* Azul al 10% */
+		color: black;
+	}
+	</style>
+	<style>
+	/* aquí el segundo style en blanco para probar el selector */
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+	<header>
+	<h1>Ejercicios Unidad 4 - Diseño de Interfaces Web</h1>
+	<h2>DOM CSS: acceso y manipulación con jQuery</h2>
+	<h3>Elemento Style del Head del documento</h3>
+	<br>
+	</header>
+	
+	<main>
+	<!-- bloque de contenido de la pagina -->
+		<p>Pinche en el siguiente botón para ver el estilo actual y cambiarlo por uno en negativo.<br/>
+		(solo funciona la primera vez)</p>
+
+		<button onclick="modoNegativo()">ESTILOS</button>
+
+		<p id="antes"></p>
+		<p id="despues"></p>
+	</main>
+
+
+	<!-- pie de pagina -->
+	<footer>
+	<br><br><br>
+	<div><a href="https://carlosboni.com" target="_blank">Prof. Carlos Boni</a></div>
+	</footer>
+	<script>
+	// seccion de codigo javascript 
+		function modoNegativo() {
+		  // obtengo y muestro el estilo del elemento STYLE inicial
+		  $("#antes").text('El estilo del primer style era: '+$("style:first").text());
+		  // invierto los colores de forma manual
+		  $("style:first").text("body { background-color: black; color: lightgray; }");
+		  // muestro el estilo actual
+		  $("#despues").text('El estilo del primer style es ahora: '+$("style:first").text());		  
+		}
+
+	</script>
+</body>
+</html>
+

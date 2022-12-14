@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--  Ejercicios de Ejemplo -->
+
+<head>
+  <title>Ejercicios Javascript</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background: rgba(0, 0, 128, 0.1)
+        /* Azul al 10% */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>EXPRESIONES REGULARES</h1>
+  <p>Se pide un texto y se analiza si contiene el string hora o si
+    corresponde a una matrícula de tipo ab456cd.</p>
+  <p>Se usan objetos de clase RegExp y su método test().</p>
+  <input type="button" value="Comenzar" onClick="comenzar()">
+
+  <script>
+    // seccion de codigo javascript 
+    function comenzar() {
+      let texto = prompt('Ingrese un texto', '');
+      const patron1 = new RegExp(/hora/);
+      if (patron1.test(texto))
+        alert('El texto ingresado SI contiene la palabra \'hora\'');
+      else
+        alert('El texto ingresado NO contiene la palabra \'hora\'');
+      const patron2 = new RegExp(/^[a-z]{2}[0-9]{3}[a-z]{2}$/);
+      if (patron2.test(texto))
+        alert('El texto ingresado SI es una matrícula correcta');
+      else
+        alert('El texto ingresado NO es una matrícula correcta');
+    }
+
+
+  </script>
+</body>
+<!--  fuente http://www.tutorialesprogramacionya.com/ -->
+
+</html>

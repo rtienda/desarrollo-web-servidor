@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efectos en Textos</title>
+    <style>
+        #caja {
+            background-image: linear-gradient(270deg, red, yellow, blue);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 25%;
+            height: 25%;
+            margin: auto;
+            /* overflow:auto; evito los desbordamientos de contenido */
+            white-space: normal; /* solo cambia de renglon con saltos de linea */
+            overflow: hidden; /* oculta el texto que desborda */
+            text-overflow: ellipsis; /* puntos suspensivos */
+        }
+
+        #parrafo {
+            display: table-cell;
+            color: blue;
+            vertical-align: middle;
+            text-align: center;
+            font-size: calc(6px + 1vw + 1vh); /* tamaño de letra proporcional */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="caja">
+        <p id="parrafo">Texto Mejorado<br />
+            Añadiendo un overflow a la caja logramos controlar los contenidos desbordantes.
+            Y con algunos efectos en el texto hacemos que el párrafo se lea mejor.
+            A su vez, hacemos un tamaño de texto más responsivo con fórmula dependiendo
+            del alto y ancho disponible para el objeto, con un tamaño mínimo de partida.</p>
+    </div>
+    <a href="https://www.w3schools.com/csSref/playdemo.asp?filename=playcss_text-decoration" target="_blank">text
+        decoration</a><br />
+    <a href="https://www.w3schools.com/csSref/playdemo.asp?filename=playcss_text-overflow" target="_blank">text
+        overflow</a><br />
+    <a href="https://www.w3schools.com/csSref/playdemo.asp?filename=playcss_text-transform" target="_blank">text
+        transform</a><br />
+    <a href="https://www.w3schools.com/csSref/playdemo.asp?filename=playcss_text-shadow" target="_blank">text
+        shadow</a><br />
+    <a href="https://www.w3schools.com/csSref/playdemo.asp?filename=playcss_word-wrap" target="_blank">word
+        wrap</a><br />
+
+
+
+
+</body>
+
+</html>

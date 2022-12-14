@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+
+        #contenedor {
+            width: 250px;
+            height:150px;
+            border-color:black;
+            border-width:1px;
+            border-style:solid;
+            position: absolute;
+            box-shadow: 10px 5px gray;
+            top: 50px;
+            left: 50px;
+        }
+
+        #sombra, #original {
+           width:100%;
+            height:100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        #sombra {
+            transform: skewX(-20deg);
+            transform-origin:bottom;
+            height:100%;
+            bottom:0px;
+            background-color: black;
+            color: black;
+        }
+
+        #original {
+            background-color: yellow;
+            transform: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+
+        <div id="sombra"></div>
+
+        <div id="original"></div>
+
+    </div>
+</body>
+
+</html>

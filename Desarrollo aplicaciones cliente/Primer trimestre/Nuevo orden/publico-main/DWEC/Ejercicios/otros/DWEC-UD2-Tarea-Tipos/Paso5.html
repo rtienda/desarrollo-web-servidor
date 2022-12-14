@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+TAREA-Conversión
+DWEC-UD2
+autor: Carlos Boni
+fecha: Octubre 2021
+ENUNCIADO: ver body.
+-->
+
+<head>
+    <title>Paso 5 - UD2-Tarea-Tipos</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: rgba(0, 0, 128, 0.1)
+                /* Azul al 10% */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>TAREA UD1</h1>
+        <h2>Validación y Conversión de números ingresados</h2>
+        <h3>Paso 4:</h3>
+        <p>(1) Usando tipo TEXT y sin validarlos, convertir
+            las 2 entradas en número usando JavaScript y,
+            añadiendo el nro 20 como tercer elemento, y
+            decir cuál de ellos tres es el número mayor.
+            Observar qué comportamiento tiene cuando se
+            ingresan valores no numéricos o demasiados dígitos.</p>
+        <p>(2) Añadir una validación por medio de html,
+            usando en lugar de TEXT el tipo adecuado de input</p>
+        <p>(3) Añadir una validación adicional con JavaScript
+            para que en caso de haber números iguales
+            lo indique con un mensaje en un prompt</p>
+        <p>(5) Ahora restringir los números de entrada para que
+            solamente se acepten los múltiplos de 3, usando HTML.</p>
+        <p>RESPUESTA:<br />
+            NO ES POSIBLE sin una validación de JavaScript.</p>
+        <p>EXPLICACIÓN: <br />
+            Si usa la rueda a la derecha del campo, se puede lograr, pero<br />
+            si ingresa los valores arbitrariamente puede Pinchar igualmente<br />
+            omitiendo así la validación.</p>
+    </header>
+    <main>
+        <label>Primer nro positivo:
+            <input type="number" min=0 step=3 id="nro1" required />
+        </label>
+        <label>Segundo nro positivo:
+            <input type="number" min=0 step=3 id="nro2" required />
+        </label>
+        <button onclick="paso5()">Pinche</button>
+        <p id="mensaje">(aquí aparecerá el resultado obtenido)</p>
+
+    </main>
+
+    <script>
+        // seccion de codigo javascript 
+        function paso5() {
+            let n1 = document.getElementById('nro1').value;
+            let n2 = document.getElementById('nro2').value;
+            let n3 = 20;
+            let msg = 'comparando ' + n1 + ', ' + n2 + ' y 20, digo que ' + '<br/>';
+
+            if (n1 == n2 || n1 == n3 || n2 == n3) {
+                alert('algunos números a comparar son iguales');
+            }
+
+            if (n1 >= n2 && n1 >= n3) {
+                msg += n1 + ' es el mayor';
+            } else {
+                if (n2 >= n1 && n2 >= n3) {
+                    msg += n2 + ' es el mayor';
+                } else {
+                    msg += n3 + ' es el mayor';
+                }
+            }
+            document.getElementById('mensaje').innerHTML = msg;
+        }
+    </script>
+
+</body>
+
+</html>

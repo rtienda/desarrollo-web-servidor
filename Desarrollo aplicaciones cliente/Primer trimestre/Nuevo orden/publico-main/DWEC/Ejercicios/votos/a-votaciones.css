@@ -1,0 +1,22 @@
+.contenedor {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    margin-top:10vh;
+    align-items:center;
+}
+
+.boton {
+    background-color:aqua;
+    font-size:xx-large;
+    color:blue;
+    border-radius:5px;
+    border-style:solid;
+    border-color:blue;
+    border-width:1px;
+    height:200px;
+    width:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}

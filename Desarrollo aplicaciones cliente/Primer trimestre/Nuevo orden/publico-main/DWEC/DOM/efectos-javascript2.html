@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Lenguajes de Marcas - prof. Carlos Boni - 2022 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos con transformaciones y filtros</title>
+    <style>
+       
+       *{
+           margin:0px;
+           padding:0px;
+           box-sizing:border-box;
+       }
+
+       #contenedor {
+           margin-left:120px;
+           margin-top:80px;
+       }
+
+        #portafotos, #portacopia{
+            height:150px;
+
+        }
+        
+        #fotooriginal, #fotocopia{
+            height:100%;
+            object-fit:cover;
+        }
+        #fotocopia{
+            /* aumenta y desplaza */
+            transform: scale(1,-1) skewX(-30deg) translate(40%,100%);
+            /* cambia el punto a partir del cual genera las transformaciones */
+            transform-origin:bottom;
+            /* desenfoca y quita colores */
+            filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo" style="color:red">Cambio de estilos con JavaScript</h1>
+    <br/>
+    <input type="button" onclick="rojo()" value="ROJO"/>
+
+    <div id="contenedor">
+        <div id="portafotos">
+            <img id="fotooriginal"src="./gato.jpg"/>
+        </div>
+        <div id="portacopia">
+            <img id="fotocopia" src="./gato.jpg"/>
+        </div>
+    </div>
+    <script>
+        function rojo(){
+            document.getElementById("titulo").style.color="red";
+        }
+    </script>
+</body>
+</html>

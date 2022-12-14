@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style>
+        #caja {
+            background-image: linear-gradient(to bottom left, blue, cyan, lightblue);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 65%;
+            height: 65%;
+            margin: auto;
+            white-space: normal;
+            /* solo cambia de renglon con saltos de linea */
+            overflow: hidden;
+            /* oculta el texto que desborda. Necesario para animaciones */
+            text-overflow: clip;
+            /* recorta sin más */
+        }
+
+        #parrafo {
+            display: table-cell;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            font-size: calc(6px + 1vw + 1vh);
+            /* tamaño de letra proporcional */
+            transition: all 1.5s ease;
+            /* defino transiciones para notarlas siempre */
+            -webkit-transition: all 1.5s ease;
+        }
+
+        #parrafo::before {
+            transition: all 1.5s ease;
+            /* defino transiciones para notarlas siempre */
+            -webkit-transition: all 1.5s ease;
+        }
+
+        #parrafo:hover {
+            color: whitesmoke;
+            text-shadow: 1px 1px 3px black;
+            background-color: gray;
+        }
+
+        #parrafo:hover::before {
+            content: "=;-)";
+            background-color: white;
+            color: black;
+        }
+
+        /* DEFINO LAS ANIMACIONES */
+        #movida {
+            animation-duration: 3s;
+            animation-name: canguro;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes canguro {
+            from {
+                margin-left: 100%;
+                width: 300%;
+                color: yellow;
+            }
+
+            50% {
+                font-size: 400%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+                color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="caja">
+        <p id="parrafo">Input Animado<br />
+            El texto se mueve. Cuando lo cambiamos se oculta y luego se sigue
+            moviendo pero con el nuevo texto introducido.
+            La clave de que esto funcione es NO recargar la página; por ello es
+            que NO usamos formulario. Debemos poner bucle infinito pues la animación
+            solo se ejecuta al cargar la página... TRICKY<br /><br /></p>
+
+        <div id="movida">(Texto en movimiento...)
+        </div>
+
+    </div>
+    <textarea id="mensaje" rows="4" cols="30">Escriba aquí un texto de hasta 4 renglones de 30 caracteres...</textarea>
+    <button onclick="actualizar()">ACEPTAR</button>
+
+    <script>
+        function actualizar() {
+            document.getElementById("movida").innerHTML = document.getElementById("mensaje").value;
+        }
+    </script>
+
+
+</body>
+
+</html>

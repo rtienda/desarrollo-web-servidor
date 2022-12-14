@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+HTML
+web o pagina: Ejercicios Unidad 4 - Diseño de Interfaces Web
+autor: Prof. Carlos Boni
+fecha: Diciembre 2020
+-->
+
+<head>
+	<title>2DAW-DIW-UD4. Prof.Carlos Boni</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="00-modelo.css">
+	<style>
+	/* aquí estilos aplicados solo a esta pagina */
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+		// seccion de codigo javascript 
+		
+	</script>
+</head>
+
+
+<body>
+
+	<header>
+	<h1>Ejercicios Unidad 4 - Diseño de Interfaces Web</h1>
+	<br>
+	</header>
+	
+	<main>
+	<!-- bloque de contenido de la pagina -->
+	<div id="mensaje">Pincha un botón (JQuery Intrusivo)</div>
+	<br>
+	<form>
+		<input type="button" value="Botón A" onclick="$('#mensaje').html('Has pinchado el botón <b>A</b>')">
+		<input type="button" value="Botón B" onclick="$('#mensaje').html('Pinchaste ahora el botón <b>B</b>')">
+	</form>
+	</main>
+
+
+	<!-- pie de pagina -->
+	<footer>
+	<br><br><br>
+	<div><a href="https://carlosboni.com" target="_blank">Prof. Carlos Boni</a></div>
+	</footer>
+	<script>
+	// seccion de codigo javascript 
+
+	</script>
+</body>
+</html>

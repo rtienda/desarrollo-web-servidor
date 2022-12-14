@@ -1,0 +1,103 @@
+body {
+    background-color: cornflowerblue;
+}
+
+li {
+    /* estilo del botón */
+    display: inline-block;
+    width: 50px;
+    height: 2em;
+    background-color: goldenrod;
+    border-radius: 5px;
+    margin: 5px;
+    border-width: 0px 2px 2px 0px;
+    border-color: gray;
+    border-style: solid;
+    text-align: center;
+    padding-top: 1vh;
+    font-size: xx-large;
+    box-shadow: 2px 2px darkolivegreen;
+}
+
+nav {
+    background-color: lightgray;
+}
+
+#seleccionado {
+    box-shadow: 2px 2px darkolivegreen inset;
+}
+
+li#seleccionado {
+
+    background-color: rgba(218, 165, 32, 0.677);
+}
+
+/* Los media query preguntando por min- se aplican de menor a mayor,
+y preguntando por max- se aplican de mayor a menor. */
+
+img {
+    width: 100%;   
+    height: auto;
+}
+
+article {
+    display:flex;
+    flex-direction:row-reverse;
+    align-items:center;
+}
+
+#caja {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+div {
+    column-count:3;
+}
+
+#pa1 {
+    color:red;
+}
+
+#pa2 {
+    color:blue;
+    column-count:1;
+}
+#pa3 {
+    color:green;
+}
+@media screen and (max-width:800px) {
+
+    /* estos estilos SOLO se aplican para viewports 
+    de hasta 800 px de ancho */
+    body {
+        background-color: yellow;
+    }
+}
+
+@media screen and (orientation:portrait) {
+
+    /* estos estilos SOLO se aplican para viewports 
+    de hasta 800 px de ancho */
+    body {
+        background-color: black;
+    }
+
+    * {
+        color: white;
+    }
+}
+
+
+@media screen and (min-width:600px) {
+    li {
+        width: 100px;
+    }
+}
+
+@media screen and (min-width:900px) {
+    li {
+        width: 200px;
+    }
+}

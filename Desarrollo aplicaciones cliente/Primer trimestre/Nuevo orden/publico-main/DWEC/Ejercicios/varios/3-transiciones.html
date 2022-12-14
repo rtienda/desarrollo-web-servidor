@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style>
+        #caja {
+            background-image: linear-gradient(to bottom left, blue, cyan, lightblue);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 65%;
+            height: 65%;
+            margin: auto;
+            /* overflow:auto; evito los desbordamientos de contenido */
+            white-space: normal; /* solo cambia de renglon con saltos de linea */
+            overflow: hidden; /* oculta el texto que desborda */
+            text-overflow: ellipsis; /* puntos suspensivos */
+        }
+
+        #parrafo {
+            display: table-cell;            
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            font-size: calc(6px + 1vw + 1vh); /* tamaño de letra proporcional */ 
+            transition: all 1.5s ease; /* defino transiciones para notarlas siempre */
+            -webkit-transition: all 1.5s ease;
+        }
+
+        #parrafo::before {
+            transition: all 1.5s ease; /* defino transiciones para notarlas siempre */
+            -webkit-transition: all 1.5s ease;
+        }
+
+        #parrafo:hover{
+            color:whitesmoke;
+            text-shadow:1px 1px 3px black;
+            background-color:gray;
+        }
+
+        #parrafo:hover::before {
+                content: "=;-)";
+                background-color: white;
+                color:black;
+        }
+      
+
+    </style>
+</head>
+
+<body>
+    <div id="caja">
+        <p id="parrafo">Transiciones<br />
+            Se trata de demorar los cambios para destacarlos como efectos llamativos.
+            Es mejor aplicar las transformaciones en el elemento, de esta forma el 
+            efecto se aprecia cuando el pseudoelemento se activa y también cuando 
+            se desactiva.</p>
+    
+
+    <h2>Más allá</h2>
+    <h3>Girar una imagen usando transformaciones 3D</h3>
+    <h4>Ver 3D Flip Image with Text en: <a href="https://www.w3schools.com/howto/howto_css_flip_image.asp?source=post_page---------------------------" target="_blank">PASO A PASO</a></h4>
+   </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAJAS - PASO 5</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        #contenedor {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            /* align-content:center; */
+            height: 90vh;
+        }
+
+        .filas {
+            display: flex;
+            height: 20vh;
+            background-color: transparent;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items:center;
+        }
+
+        .cajas {
+            height: 10vh;
+            width: 10vw;
+            background-color: yellow;
+        }
+
+        .invisible {
+            visibility:hidden;
+        }
+
+
+        #caja-roja {
+            background-color: red;
+        }
+
+        #caja-verde {
+            background-color: green;
+        }
+
+        #caja-azul {
+            background-color: blue;
+        }
+        #caja-naranja {
+            background-color: orange;
+        }
+        #caja-morada {
+            background-color: magenta;
+        }
+
+        h1 {
+            text-align: center;
+            height: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CAJAS - PASO 5</h1>
+    <div id="contenedor">
+        <div class="filas">
+            <div class="cajas" id="caja-azul" style="order:2"></div>
+            <div class="cajas invisible" style="order:1"></div>
+            <div class="cajas invisible" style="order:3"></div>
+        </div>
+        <div class="filas">
+            <div class="cajas" id="caja-roja" style="order:2"></div>
+            <div class="cajas" id="caja-naranja" style="order:1"></div>
+            <div class="cajas" id="caja-morada" style="order:3"></div>
+        </div>
+        <div class="filas">
+            <div class="cajas" id="caja-verde" style="order:2"></div>
+            <div class="cajas invisible" style="order:1"></div>
+            <div class="cajas invisible" style="order:3"></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

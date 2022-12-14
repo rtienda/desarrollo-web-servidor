@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style>
+        #caja {
+            background-image: linear-gradient(to bottom left, blue, cyan, lightblue);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 65%;
+            height: 65%;
+            margin: auto;
+            white-space: normal;
+            /* solo cambia de renglon con saltos de linea */
+            overflow: hidden;
+            /* oculta el texto que desborda. Necesario para animaciones */
+            text-overflow: clip;
+            /* recorta sin más */
+        }
+
+        #parrafo {
+            display: table-cell;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            font-size: calc(6px + 1vw + 1vh);
+            /* tamaño de letra proporcional */
+            transition: all 1.5s ease;
+            /* defino transiciones para notarlas siempre */
+            -webkit-transition: all 1.5s ease;
+        }
+
+        #parrafo::before {
+            transition: all 1.5s ease;
+            /* defino transiciones para notarlas siempre */
+            -webkit-transition: all 1.5s ease;
+        }
+
+        #parrafo:hover {
+            color: whitesmoke;
+            text-shadow: 1px 1px 3px black;
+            background-color: gray;
+        }
+
+        #parrafo:hover::before {
+            content: "=;-)";
+            background-color: white;
+            color: black;
+        }
+
+        /* DEFINO LAS ANIMACIONES */
+        #movida {
+            animation-duration: 5s;
+            animation-name: canguro;
+            animation-iteration-count: 1;
+            animation-direction: alternate;
+        }
+
+        @keyframes canguro {
+            from {
+                margin-left: 10%;
+                width: 300%
+            }
+
+            
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+        #movidas {
+            animation-name: dos;
+            animation-duration: 1s;
+            animation-iteration-count: 5;
+            animation-direction: normal;
+        }
+
+     
+        @keyframes dos {
+            from {
+                margin-left: 100%;
+                width: 100%;
+                color:red;
+            }
+            
+            50% {
+                font-size: 300%;
+                color:yellow;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+                color:blue;
+            }
+        }
+
+
+ 
+    </style>
+</head>
+
+<body>
+    <div id="caja">
+        <p id="parrafo">Animaciones<br />
+            En este caso se logra mover objetos desde-hasta.
+            Permite indicar también un tamaño intermedio, la duración de la animación,
+            y si se hace de forma infinita, entre otros...<br /></p>
+
+        <div id="movida">
+            <h2>FUENTE</h2>
+            <h3>En Mozilla Developers Network</h3>
+        </div>
+
+        <div id="movidas">
+            <h4>Para ver en español pincha <a
+                    href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Animations/Using_CSS_animations."
+                    target="_blank">AQUÍ</a></h4>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

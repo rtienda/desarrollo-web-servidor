@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+HTML
+web o pagina: Ejercicios Unidad 4 - Diseño de Interfaces Web
+autor: Prof. Carlos Boni
+fecha: Enero 2021
+-->
+
+<head>
+	<title>2DAW-DIW-UD4. Prof.Carlos Boni</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="00-modelo.css"/>
+	<style>
+	/* aquí estilos aplicados solo a esta pagina */
+	body {
+		background-color: rgba(0, 0, 128, 0.1); /* Azul al 10% */
+		color: black;
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+	<header>
+	<h1>Ejercicios Unidad 4 - Diseño de Interfaces Web</h1>
+	<h2>DOM CSS: acceso y manipulación con jQuery vs JavaScript</h2>
+	<h3>Elemento cualquiera del BODY del documento</h3>
+	<br/>
+	</header>
+	
+	<main>
+	<!-- bloque de contenido de la pagina -->
+		<p id="texto" style="color:blue">Pinche en el siguiente botón para ver esto en rojo.<br/>
+		(solo funciona la primera vez)</p>
+
+		<button onclick="verYcambiar()">EN ROJO con JavaScript</button>
+		<button onclick="verYcambiar2()">EN ROJO con jQuery</button>
+
+
+		<p>JavaScript:</p>
+		<p id="original"></p>
+		<p id="antes"></p>
+		<p id="despues"></p>
+		<br/>
+		<p>jQuery:</p>
+		<p id="original1"></p>
+		<p id="antes1"></p>
+		<p id="despues1"></p>
+		
+	</main>
+
+
+	<!-- pie de pagina -->
+	<footer>
+	<br/><br/><br/>
+	<div><a href="https://carlosboni.com" target="_blank">Prof. Carlos Boni</a></div>
+	</footer>
+	<script>
+	// seccion de codigo javascript 
+		// guardo el color original
+        var x = document.getElementById("texto").style.color;
+		// muestro el color original
+		document.getElementById("original").innerHTML = 'El color original era: '+x;
+		function verYcambiar() {
+		  // guardo el color original
+          var y = document.getElementById("texto").style.color;
+		  // pongo el párrafo en rojo
+		  document.getElementById("texto").style.color = "red";
+		  // muestro el estilo anterior
+		  document.getElementById("antes").innerHTML = 'El color era: '+y;
+		  // muestro el estilo actual
+		  document.getElementById("despues").innerHTML = 'El color es: '+document.getElementById("texto").style.color;  
+		}
+
+	// seccion de codigo jQuery 
+		// muestro el color original
+		$("#original1").text('El color original era: '+$("#texto").css("color"));
+		function verYcambiar2() {
+		  // muestro el estilo previo
+		  $("#antes1").text('El color era: '+$("#texto").css("color"));
+		  // pongo el párrafo en rojo
+		  $("#texto").css("color", "red");
+		  // muestro el estilo actual
+		  $("#despues1").text('El color es ahora: '+$("#texto").css("color"));  
+		}
+
+	</script>
+</body>
+</html>
