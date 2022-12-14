@@ -14,12 +14,14 @@ setTimeout(renoD, 3100);
 
 function mostrar(){
     document.getElementById("cuerpo").style.background="transparent";
+    
     // document.getElementById("cuerpo").style.background="transparent";
 
 }
 function transparentar(){
     document.getElementById("Box1").style.visibility="visible";
-    
+    document.getElementById("windowId").style.visibility="visible";
+
 }
 function renoI(){
     // document.getElementById("renoIzq").classList.remove('renoIzquerdaQuieto');

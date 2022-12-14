@@ -11,7 +11,7 @@ body{
     flex-direction: column;
     
     align-items: center;
-    justify-content: flex-end;
+    justify-content:flex-start;
     overflow: hidden;
     /* position: relative; */
     /* z-index: 100; */
@@ -39,7 +39,7 @@ body{
     border-color: #f7be10;
     border-radius: 25px;
     margin-bottom: 40px;
-
+    flex-direction: column;
     /* z-index: 1;  */
 }
 
@@ -138,9 +138,9 @@ img{
     width: 340px;
     height: 340px;
     background: #a0d5d3;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
     border-radius: 50%;
     margin-top: -60px;
     -webkit-transform: translate(-50%, -50%);
@@ -149,7 +149,13 @@ img{
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border: 10px solid #f8e7dc;
-    overflow: hidden; }
+    transform: scale(0.6);
+    overflow: hidden;
+   
+ }
+ #windowId{
+    visibility: hidden;
+ }
   
   .santa {
     position: absolute;
