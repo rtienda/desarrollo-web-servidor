@@ -99,7 +99,7 @@
                                         <td><?php echo $fecha_nacimiento ?></td>
                                         <td><?php echo $rol ?></td>
                                         <td>
-                                            <form action="mostrar_prenda.php" method="get">
+                                            <form action="mostrar_cliente.php" method="get">
                                                 <button class="btn btn-primary" type="submit">Ver</button>
                                                 <input type="hidden" name="id" value="<?php echo $fila["id"] ?>">
                                             </form>

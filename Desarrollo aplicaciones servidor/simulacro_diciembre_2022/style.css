@@ -1,0 +1,67 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+th,
+td {
+    padding: 0.5em;
+    text-align: left;
+    border: 1px solid #ccc;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+th {
+    font-weight: bold;
+    background-color: rgb(211, 76, 76);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.error {
+    color: red;
+}
+
+form {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form input, form textarea, form button, form select {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  form button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
